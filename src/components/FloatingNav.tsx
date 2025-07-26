@@ -89,7 +89,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({ activeSection, scrollProgress
                   <motion.div
                     layoutId="activeNavBg"
                     className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"
-                    transition={{ type: "spring", stiffness: 400, damping: 40 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30, duration: 0.6 }}
                   />
                 )}
                 <div className="relative flex items-center gap-2">

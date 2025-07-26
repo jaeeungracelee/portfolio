@@ -12,29 +12,63 @@ import ThemeToggle from '@/components/ThemeToggle';
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (window.scrollY / totalHeight) * 100;
-      setScrollProgress(progress);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          
+          // Only update if scroll has changed significantly
+          if (Math.abs(currentScrollY - lastScrollY) > 10) {
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (currentScrollY / totalHeight) * 100;
+            setScrollProgress(progress);
 
-      // Update active section based on scroll position
-      const sections = ['hero', 'about', 'projects', 'contact'];
-      const sectionElements = sections.map(id => document.getElementById(id));
-      
-      for (let i = sectionElements.length - 1; i >= 0; i--) {
-        const element = sectionElements[i];
-        if (element && element.offsetTop <= window.scrollY + 100) {
-          setActiveSection(sections[i]);
-          break;
-        }
+            // Update active section based on scroll position with debouncing
+            const sections = ['hero', 'about', 'projects', 'contact'];
+            const sectionElements = sections.map(id => document.getElementById(id));
+            
+            // Check if we're near the bottom of the page (contact section)
+            const scrollPosition = currentScrollY + window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            let newActiveSection = activeSection;
+            
+            if (scrollPosition >= documentHeight - 50) {
+              newActiveSection = 'contact';
+            } else {
+              // Normal section detection for other sections
+              for (let i = sectionElements.length - 1; i >= 0; i--) {
+                const element = sectionElements[i];
+                if (element && element.offsetTop <= currentScrollY + 150) {
+                  newActiveSection = sections[i];
+                  break;
+                }
+              }
+            }
+            
+            // Only update if section actually changed
+            if (newActiveSection !== activeSection) {
+              setActiveSection(newActiveSection);
+            }
+            
+            setLastScrollY(currentScrollY);
+          }
+          
+          ticking = false;
+        });
+        
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [activeSection, lastScrollY]);
 
   const projects = [
     {
