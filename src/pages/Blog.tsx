@@ -68,11 +68,11 @@ const Blog = () => {
             <div className="flex items-center justify-center gap-3 mb-6">
               <BookOpen className="w-8 h-8 text-purple-400" />
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                Blog
+                graceful blog
               </h1>
             </div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Thoughts, insights, and experiences from my journey as a developer and designer.
+              thoughts, insights, and experiences from my journey!
             </p>
           </motion.div>
 
@@ -87,7 +87,7 @@ const Blog = () => {
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <Input
-                  placeholder="Search articles, tags, or topics..."
+                  placeholder="search articles, tags, or topics..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10"
@@ -130,8 +130,8 @@ const Blog = () => {
                   className="text-center py-12"
                 >
                   <BookOpen className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">No articles found</h3>
-                  <p className="text-muted-foreground">Try adjusting your search or filter criteria.</p>
+                  <h3 className="text-xl font-semibold mb-2">no articles found</h3>
+                  <p className="text-muted-foreground">try adjusting your search or filter criteria.</p>
                 </motion.div>
               ) : (
                 filteredPosts.map((post, index) => (

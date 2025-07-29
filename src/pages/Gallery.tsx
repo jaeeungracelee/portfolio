@@ -74,11 +74,11 @@ const Gallery = () => {
             <div className="flex items-center justify-center gap-3 mb-6">
               <Camera className="w-8 h-8 text-purple-400" />
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                Photo Gallery
+                graceful captures
               </h1>
             </div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A curated collection of my photography work, capturing moments and stories through the lens.
+              a curated collection of my photography work, capturing moments and stories through the lens.
             </p>
           </motion.div>
 

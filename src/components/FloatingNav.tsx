@@ -15,15 +15,15 @@ const FloatingNav: React.FC<FloatingNavProps> = ({ activeSection, scrollProgress
   const isMobile = useIsMobile();
   
   const navItems = [
-    { id: 'hero', label: 'Home', icon: Home, href: '#hero' },
-    { id: 'about', label: 'About', icon: User, href: '#about' },
-    { id: 'projects', label: 'Projects', icon: Briefcase, href: '#projects' },
-    { id: 'contact', label: 'Contact', icon: Mail, href: '#contact' },
+    { id: 'hero', label: 'home', icon: Home, href: '#hero' },
+    { id: 'about', label: 'about', icon: User, href: '#about' },
+    { id: 'projects', label: 'projects', icon: Briefcase, href: '#projects' },
+    { id: 'contact', label: 'contact', icon: Mail, href: '#contact' },
   ];
 
   const externalNavItems = [
-    { label: 'Gallery', icon: Camera, href: '/gallery' },
-    { label: 'Blog', icon: BookOpen, href: '/blog' },
+    { label: 'captures', icon: Camera, href: '/gallery' },
+    { label: 'blog', icon: BookOpen, href: '/blog' },
   ];
 
   const scrollToSection = (sectionId: string) => {

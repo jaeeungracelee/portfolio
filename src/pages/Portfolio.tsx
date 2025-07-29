@@ -73,8 +73,8 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "Project Alpha",
-      description: "A modern web application built with React and TypeScript",
+      title: "NaverScraper",
+      description: "A modern web application built with Next.js and TypeScript",
       image: "/placeholder.svg",
       technologies: ["React", "TypeScript", "Tailwind"],
       github: "https://github.com",
@@ -83,8 +83,8 @@ const Portfolio = () => {
     },
     {
       id: 2,
-      title: "Project Beta",
-      description: "Mobile-first design with advanced animations",
+      title: "EyeSpeak",
+      description: "Meta Llama Hackathon Winner",
       image: "/placeholder.svg",
       technologies: ["Next.js", "Three.js", "CSS"],
       github: "https://github.com",
@@ -93,7 +93,7 @@ const Portfolio = () => {
     },
     {
       id: 3,
-      title: "Project Gamma",
+      title: "InterviewAid",
       description: "Full-stack application with real-time features",
       image: "/placeholder.svg",
       technologies: ["Node.js", "React", "Socket.io"],
@@ -128,7 +128,7 @@ const Portfolio = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.2 }}
           >
-            Grace Portfolio
+            grace lee
           </motion.h1>
           <motion.p 
             className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
@@ -136,7 +136,7 @@ const Portfolio = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            Full Stack Developer & Creative Designer
+            full stack developer & creative designer
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
@@ -148,7 +148,7 @@ const Portfolio = () => {
               className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white px-8 py-3 rounded-full"
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              View My Work
+              see my work
             </Button>
           </motion.div>
         </motion.div>
@@ -173,13 +173,13 @@ const Portfolio = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              About Me
+              about me
             </h2>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="text-left">
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  I'm a passionate full-stack developer with a keen eye for design and user experience. 
-                  With over 5 years of experience, I specialize in creating modern, responsive web applications 
+                  i'm a passionate full-stack developer with an eye for design and user experience. 
+                  with over 3 years of experience, i specialize in creating modern, responsive web applications 
                   that not only look great but perform exceptionally well.
                 </p>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
@@ -221,7 +221,7 @@ const Portfolio = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              My Projects
+              my projects
             </h2>
             <div className="flex justify-center gap-4 mb-12">
               {['all', 'web', 'mobile', 'fullstack'].map((category) => (
@@ -302,11 +302,11 @@ const Portfolio = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              Get In Touch
+              contact me
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              I'm always open to discussing new opportunities and interesting projects. 
-              Let's create something amazing together!
+              i'm always open to discussing new opportunities and interesting projects. 
+              let's create something cool together!
             </p>
           </motion.div>
 
@@ -319,20 +319,20 @@ const Portfolio = () => {
             >
               <Card className="p-8 border-purple-500/20">
                 <CardHeader className="px-0 pt-0">
-                  <CardTitle>Contact Information</CardTitle>
+                  <CardTitle>contact information</CardTitle>
                 </CardHeader>
                 <CardContent className="px-0 space-y-6">
                   <div className="flex items-center gap-4">
                     <Mail className="w-5 h-5 text-purple-400" />
-                    <span>grace@portfolio.com</span>
+                    <span>jaeeungracelee@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <Phone className="w-5 h-5 text-cyan-400" />
-                    <span>+1 (555) 123-4567</span>
+                    <span>+1 (236) 518-6846</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <MapPin className="w-5 h-5 text-blue-400" />
-                    <span>San Francisco, CA</span>
+                    <span>toronto, ON</span>
                   </div>
                 </CardContent>
               </Card>
@@ -347,15 +347,15 @@ const Portfolio = () => {
               <Card className="p-8 border-purple-500/20">
                 <form className="space-y-6">
                   <div>
-                    <Label htmlFor="name">Name</Label>
+                    <Label htmlFor="name">name</Label>
                     <Input id="name" className="mt-2" />
                   </div>
                   <div>
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email">email</Label>
                     <Input id="email" type="email" className="mt-2" />
                   </div>
                   <div>
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message">message</Label>
                     <textarea 
                       id="message"
                       rows={4}
@@ -366,7 +366,7 @@ const Portfolio = () => {
                     type="submit" 
                     className="w-full bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white"
                   >
-                    Send Message
+                    send message
                   </Button>
                 </form>
               </Card>
