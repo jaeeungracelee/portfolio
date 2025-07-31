@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import FloatingNav from '@/components/FloatingNav';
 import ThemeToggle from '@/components/ThemeToggle';
+import Timeline from '@/components/Timeline';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -103,6 +104,45 @@ const Portfolio = () => {
     }
   ];
 
+  const timelineItems = [
+    {
+      id: '1',
+      title: 'Senior Full Stack Developer',
+      company: 'TechCorp Solutions',
+      location: 'San Francisco, CA',
+      period: '2021 - Present',
+      description: 'Led development of scalable web applications serving 100k+ users. Architected microservices infrastructure and mentored junior developers. Implemented CI/CD pipelines and improved deployment efficiency by 40%.',
+      technologies: ['React', 'Node.js', 'TypeScript', 'AWS', 'PostgreSQL', 'Docker']
+    },
+    {
+      id: '2',
+      title: 'Frontend Developer',
+      company: 'Digital Innovations Inc',
+      location: 'Remote',
+      period: '2019 - 2021',
+      description: 'Developed responsive web applications with modern React ecosystem. Collaborated with design teams to implement pixel-perfect UI components. Optimized application performance achieving 95+ lighthouse scores.',
+      technologies: ['React', 'JavaScript', 'CSS3', 'Webpack', 'Jest', 'Figma']
+    },
+    {
+      id: '3',
+      title: 'Junior Web Developer',
+      company: 'StartupHub',
+      location: 'Berkeley, CA',
+      period: '2018 - 2019',
+      description: 'Built interactive web interfaces for early-stage startups. Learned modern development practices and agile methodologies. Contributed to open-source projects and participated in hackathons.',
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Bootstrap', 'Git']
+    },
+    {
+      id: '4',
+      title: 'Computer Science Degree',
+      company: 'UC Berkeley',
+      location: 'Berkeley, CA',
+      period: '2014 - 2018',
+      description: 'Bachelor of Science in Computer Science with focus on web technologies and software engineering. Participated in coding competitions and tech club activities. Graduated Magna Cum Laude.',
+      technologies: ['Python', 'Java', 'C++', 'Data Structures', 'Algorithms', 'Database Systems']
+    }
+  ];
+
   const [filter, setFilter] = useState('all');
   const filteredProjects = filter === 'all' 
     ? projects 
@@ -175,7 +215,7 @@ const Portfolio = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
               about me
             </h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
               <div className="text-left">
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                   i'm a passionate full-stack developer with an eye for design and user experience. 
@@ -206,6 +246,20 @@ const Portfolio = () => {
                 </div>
               </div>
             </div>
+            
+            {/* Timeline Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="mt-20"
+            >
+              <h3 className="text-3xl font-bold mb-12 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                My Journey
+              </h3>
+              <Timeline items={timelineItems} />
+            </motion.div>
           </motion.div>
         </div>
       </section>
