@@ -112,7 +112,8 @@ const Portfolio = () => {
       location: 'San Francisco, CA',
       period: '2021 - Present',
       description: 'Led development of scalable web applications serving 100k+ users. Architected microservices infrastructure and mentored junior developers. Implemented CI/CD pipelines and improved deployment efficiency by 40%.',
-      technologies: ['React', 'Node.js', 'TypeScript', 'AWS', 'PostgreSQL', 'Docker']
+      technologies: ['React', 'Node.js', 'TypeScript', 'AWS', 'PostgreSQL', 'Docker'],
+      logo: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=64&h=64&fit=crop&crop=center'
     },
     {
       id: '2',
@@ -121,7 +122,8 @@ const Portfolio = () => {
       location: 'Remote',
       period: '2019 - 2021',
       description: 'Developed responsive web applications with modern React ecosystem. Collaborated with design teams to implement pixel-perfect UI components. Optimized application performance achieving 95+ lighthouse scores.',
-      technologies: ['React', 'JavaScript', 'CSS3', 'Webpack', 'Jest', 'Figma']
+      technologies: ['React', 'JavaScript', 'CSS3', 'Webpack', 'Jest', 'Figma'],
+      logo: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=64&h=64&fit=crop&crop=center'
     },
     {
       id: '3',
@@ -130,7 +132,8 @@ const Portfolio = () => {
       location: 'Berkeley, CA',
       period: '2018 - 2019',
       description: 'Built interactive web interfaces for early-stage startups. Learned modern development practices and agile methodologies. Contributed to open-source projects and participated in hackathons.',
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Bootstrap', 'Git']
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Bootstrap', 'Git'],
+      logo: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=64&h=64&fit=crop&crop=center'
     },
     {
       id: '4',
@@ -139,7 +142,8 @@ const Portfolio = () => {
       location: 'Berkeley, CA',
       period: '2014 - 2018',
       description: 'Bachelor of Science in Computer Science with focus on web technologies and software engineering. Participated in coding competitions and tech club activities. Graduated Magna Cum Laude.',
-      technologies: ['Python', 'Java', 'C++', 'Data Structures', 'Algorithms', 'Database Systems']
+      technologies: ['Python', 'Java', 'C++', 'Data Structures', 'Algorithms', 'Database Systems'],
+      logo: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=64&h=64&fit=crop&crop=center'
     }
   ];
 
@@ -420,7 +424,7 @@ const Portfolio = () => {
                     type="submit" 
                     className="w-full bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white"
                   >
-                    send message
+                    Send Message
                   </Button>
                 </form>
               </Card>

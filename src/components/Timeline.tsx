@@ -11,6 +11,7 @@ interface TimelineItem {
   period: string;
   description: string;
   technologies?: string[];
+  logo?: string;
 }
 
 interface TimelineProps {
@@ -39,13 +40,24 @@ const Timeline: React.FC<TimelineProps> = ({ items }) => {
           <div className="ml-16 flex-1">
             <div className="bg-card border border-purple-500/20 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-foreground mb-1">
-                    {item.title}
-                  </h3>
-                  <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                    <Building className="w-4 h-4" />
-                    <span className="font-medium">{item.company}</span>
+                <div className="flex items-start gap-4">
+                  {item.logo && (
+                    <div className="w-12 h-12 rounded-lg overflow-hidden border border-purple-500/20 bg-background p-2 flex-shrink-0">
+                      <img 
+                        src={item.logo} 
+                        alt={`${item.company} logo`}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  )}
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-1">
+                      {item.title}
+                    </h3>
+                    <div className="flex items-center gap-2 text-muted-foreground mb-2">
+                      <Building className="w-4 h-4" />
+                      <span className="font-medium">{item.company}</span>
+                    </div>
                   </div>
                 </div>
                 <div className="flex flex-col sm:text-right">
