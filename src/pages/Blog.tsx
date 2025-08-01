@@ -67,7 +67,7 @@ const Blog = () => {
           >
             <div className="flex items-center justify-center gap-3 mb-6">
               <BookOpen className="w-8 h-8 text-purple-400" />
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent pb-1">
                 graceful blog
               </h1>
             </div>
@@ -101,7 +101,7 @@ const Blog = () => {
                   key={category}
                   variant={selectedCategory === category ? "default" : "outline"}
                   onClick={() => setSelectedCategory(category)}
-                  className={`capitalize ${selectedCategory === category ? 
+                  className={`${selectedCategory === category ? 
                     "bg-gradient-to-r from-purple-500 to-cyan-500 text-white" : 
                     "hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-cyan-500/20"
                   }`}
