@@ -259,9 +259,6 @@ const Portfolio = () => {
               viewport={{ once: true }}
               className="mt-20"
             >
-              <h3 className="text-3xl font-bold mb-12 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                My Journey
-              </h3>
               <Timeline items={timelineItems} />
             </motion.div>
           </motion.div>
@@ -424,7 +421,7 @@ const Portfolio = () => {
                     type="submit" 
                     className="w-full bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white"
                   >
-                    Send Message
+                    send message
                   </Button>
                 </form>
               </Card>
