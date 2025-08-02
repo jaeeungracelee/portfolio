@@ -51,7 +51,7 @@ const Timeline: React.FC<TimelineProps> = ({ items }) => {
                     </div>
                   )}
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-1">
+                    <h3 className="text-xl font-bold text-foreground mb-1 text-left">
                       {item.title}
                     </h3>
                     <div className="flex items-center gap-2 text-muted-foreground mb-2">
@@ -72,7 +72,7 @@ const Timeline: React.FC<TimelineProps> = ({ items }) => {
                 </div>
               </div>
               
-              <p className="text-muted-foreground mb-4 leading-relaxed">
+              <p className="text-muted-foreground mb-4 leading-relaxed text-left">
                 {item.description}
               </p>
               

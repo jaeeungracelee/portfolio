@@ -74,32 +74,52 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "NaverScraper",
-      description: "A modern web application built with Next.js and TypeScript",
+      title: "EyeSpeak",
+      description: "Meta Llama Hackathon Winner - A tool that enables users to communicate solely with their eyes, leveraging AI-powered sentence generation with llama3.2-vision:90b for intuitive, context-aware autocompletion.",
       image: "/placeholder.svg",
-      technologies: ["React", "TypeScript", "Tailwind"],
+      technologies: ["Vite", "Webgazer.js", "Llama 3.2"],
       github: "https://github.com",
-      demo: "https://demo.com",
-      category: "web"
+      demo: "https://cerebralvalley.pixieset.com/torontohackathon/demovideoswinners/",
+      category: "ai"
     },
     {
       id: 2,
-      title: "EyeSpeak",
-      description: "Meta Llama Hackathon Winner",
+      title: "InterviewAId",
+      description: "CalHacks 2024 - Built an AI-powered platform for simulating voice-to-voice technical interviews with real-time feedback using FastAPI and Socket.IO. Managed data storage in AWS S3 with OpenAI Whisper for audio transcription.",
       image: "/placeholder.svg",
-      technologies: ["Next.js", "Three.js", "CSS"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      category: "mobile"
+      technologies: ["Next.js", "FastAPI", "Socket.IO", "Docker", "hume.AI", "LMNT"],
+      github: "https://github.com/jaeeungracelee/InterviewAId",
+      demo: "https://github.com/jaeeungracelee/InterviewAId",
+      category: "fullstack"
     },
     {
       id: 3,
-      title: "InterviewAid",
-      description: "Full-stack application with real-time features",
+      title: "Inter-University Big Data Challenge 2024",
+      description: "Developed a random forest classifier using NLTK and Kaggle Datasets to scan & analyze text for sentiment ratings based on social media usage patterns. Used BeautifulSoup4 to web scrape and Reddit API and Twitter API to gather data.",
       image: "/placeholder.svg",
-      technologies: ["Node.js", "React", "Socket.io"],
+      technologies: ["Python", "NLTK", "BeautifulSoup4", "Reddit API", "Twitter API"],
       github: "https://github.com",
-      demo: "https://demo.com",
+      demo: "https://sentiment-scanner.vercel.app/",
+      category: "data"
+    },
+    {
+      id: 4,
+      title: "SmileQuest",
+      description: "StormHacks 2024 - Built a social media app promoting mental wellness using Node, Express, and Firebase DB. Developed Smiley, an interactive virtual friend with the ChatGPT API, engineered to stimulate supportive conversations.",
+      image: "/placeholder.svg",
+      technologies: ["React Native", "TypeScript", "Node", "Express", "Firebase", "ChatGPT API"],
+      github: "https://github.com/jaeeungracelee/SmileQuest",
+      demo: "https://github.com/jaeeungracelee/SmileQuest",
+      category: "mobile"
+    },
+    {
+      id: 5,
+      title: "NaverScraper",
+      description: "A Next.js web application that scrapes Naver blogs and news articles based on keywords and date ranges, providing AI-powered sentiment analysis & data export capabilities for market trend research.",
+      image: "/placeholder.svg",
+      technologies: ["Next.js", "Web Scraping", "AI", "Sentiment Analysis", "Data Export"],
+      github: "https://github.com/jaeeungracelee/NaverScraper",
+      demo: "https://github.com/jaeeungracelee/NaverScraper",
       category: "fullstack"
     }
   ];
@@ -107,43 +127,53 @@ const Portfolio = () => {
   const timelineItems = [
     {
       id: '1',
-      title: 'Senior Full Stack Developer',
-      company: 'TechCorp Solutions',
-      location: 'San Francisco, CA',
-      period: '2021 - Present',
-      description: 'Led development of scalable web applications serving 100k+ users. Architected microservices infrastructure and mentored junior developers. Implemented CI/CD pipelines and improved deployment efficiency by 40%.',
-      technologies: ['React', 'Node.js', 'TypeScript', 'AWS', 'PostgreSQL', 'Docker'],
-      logo: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=64&h=64&fit=crop&crop=center'
+      title: 'Software Dev Engineer Intern',
+      company: 'Amazon Web Services (AWS)',
+      location: 'Toronto, ON',
+      period: 'May 2025 - Present',
+      description: 'Contributing to the open-source AWS labs MCP repository by designing and developing a production-ready server to enable LLM-powered control plane operations across all Amazon RDS database engines.',
+      technologies: ['Python', 'AWS', 'RDS', 'LLM', 'Open Source'],
+      logo: 'https://www.google.com/s2/favicons?sz=64&domain=aws.amazon.com'
     },
     {
       id: '2',
-      title: 'Frontend Developer',
-      company: 'Digital Innovations Inc',
-      location: 'Remote',
-      period: '2019 - 2021',
-      description: 'Developed responsive web applications with modern React ecosystem. Collaborated with design teams to implement pixel-perfect UI components. Optimized application performance achieving 95+ lighthouse scores.',
-      technologies: ['React', 'JavaScript', 'CSS3', 'Webpack', 'Jest', 'Figma'],
-      logo: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=64&h=64&fit=crop&crop=center'
+      title: 'Digital & Tech Intern',
+      company: 'GSK (Formerly GlaxoSmithKline)',
+      location: 'Seoul, Korea',
+      period: 'Jan 2025 - Apr 2025',
+      description: 'Leveraged Databricks to map 78,000+ hospitals to 25,000+ pharmacies, enabling precise sales data tracking. Built a social listening platform on PowerBI using Naver API and pytrends to benchmark competing vaccines and support pre-launch activities for Arexvy.',
+      technologies: ['Databricks', 'PowerBI', 'Python', 'Naver API', 'pytrends'],
+      logo: 'https://www.google.com/s2/favicons?sz=64&domain=gsk.com'
     },
     {
       id: '3',
-      title: 'Junior Web Developer',
-      company: 'StartupHub',
-      location: 'Berkeley, CA',
-      period: '2018 - 2019',
-      description: 'Built interactive web interfaces for early-stage startups. Learned modern development practices and agile methodologies. Contributed to open-source projects and participated in hackathons.',
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Bootstrap', 'Git'],
-      logo: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=64&h=64&fit=crop&crop=center'
+      title: 'Machine Learning Undergraduate Researcher',
+      company: 'WAT.ai x Hamming.ai (YC S24)',
+      location: 'Waterloo, ON',
+      period: 'Sept 2024 - Present',
+      description: 'Developed LLM-based self-correction systems and established benchmarks to evaluate their efficiency in detecting and resolving bugs in extensive codebases. Achieved No.1 (MapCoder) and No.11 (Monte Carlo Tree Search) on the MBPP Leaderboard.',
+      technologies: ['Python', 'LLM', 'Machine Learning', 'Monte Carlo Tree Search', 'MBPP'],
+      logo: 'https://www.google.com/s2/favicons?sz=64&domain=hamming.ai'
     },
     {
       id: '4',
-      title: 'Computer Science Degree',
-      company: 'UC Berkeley',
-      location: 'Berkeley, CA',
-      period: '2014 - 2018',
-      description: 'Bachelor of Science in Computer Science with focus on web technologies and software engineering. Participated in coding competitions and tech club activities. Graduated Magna Cum Laude.',
-      technologies: ['Python', 'Java', 'C++', 'Data Structures', 'Algorithms', 'Database Systems'],
-      logo: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=64&h=64&fit=crop&crop=center'
+      title: 'Business Analyst Intern',
+      company: 'Aquilini Investment Group',
+      location: 'Vancouver, BC',
+      period: 'May 2024 - Aug 2024',
+      description: 'Spearheaded a project consolidating 6000+ accounts using SQL, pandas, and Microsoft\'s SQL Server Reporting Services. Developed a trained AI model utilizing OCR and regex to automate invoice processing, reducing 400+ manual PDF data entries per day with 96%+ accuracy.',
+      technologies: ['SQL', 'Python', 'pandas', 'PowerApps', 'OCR', 'AI/ML'],
+      logo: 'https://www.google.com/s2/favicons?sz=64&domain=aquilini.com'
+    },
+    {
+      id: '5',
+      title: 'Bachelor of Computer Science & Business Administration',
+      company: 'University of Waterloo & Wilfrid Laurier University',
+      location: 'Waterloo, ON',
+      period: '2021 - Present',
+      description: 'Double Degree program combining Computer Science and Business Administration. Active in Computer Science Club as Web Designer, 3x Hackathon Winner, Math Faculty Orientation Team Head & MC. Coursework includes Object-Oriented Programming, Algorithm Design, and Software Development.',
+      technologies: ['C++', 'Python', 'Java', 'Web Development', 'Algorithms', 'Data Structures'],
+      logo: 'https://www.google.com/s2/favicons?sz=64&domain=uwaterloo.ca'
     }
   ];
 
@@ -227,8 +257,8 @@ const Portfolio = () => {
                   that not only look great but perform exceptionally well.
                 </p>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  My expertise spans across frontend technologies like React, TypeScript, and Three.js, 
-                  as well as backend development with Node.js and various databases. I love bringing 
+                  my expertise spans across frontend technologies like react, next.js, and typescript, 
+                  as well as backend development with node.js and various databases. i love bringing 
                   creative ideas to life through code.
                 </p>
                 <div className="flex flex-wrap gap-3">
@@ -245,7 +275,11 @@ const Portfolio = () => {
               <div className="relative">
                 <div className="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-purple-400 via-cyan-400 to-blue-400 p-1">
                   <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
-                    <div className="text-6xl">👋</div>
+                    <img 
+                      src="/favicon.ico" 
+                      alt="Grace Lee" 
+                      className="w-52 h-52 object-contain"
+                    />
                   </div>
                 </div>
               </div>
@@ -278,8 +312,8 @@ const Portfolio = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent pb-1">
               my projects
             </h2>
-            <div className="flex justify-center gap-4 mb-12">
-              {['all', 'web', 'mobile', 'fullstack'].map((category) => (
+            <div className="flex justify-center gap-4 mb-12 flex-wrap">
+              {['all', 'ai', 'fullstack', 'data', 'mobile', 'creative'].map((category) => (
                 <Button
                   key={category}
                   variant={filter === category ? "default" : "outline"}
@@ -289,7 +323,7 @@ const Portfolio = () => {
                     "hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-cyan-500/20"
                   }
                 >
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                  {category.charAt(0) + category.slice(1)}
                 </Button>
               ))}
             </div>
