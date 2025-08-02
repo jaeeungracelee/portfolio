@@ -75,8 +75,7 @@ const Portfolio = () => {
     {
       id: 1,
       title: "EyeSpeak",
-      description: "Meta Llama Hackathon Winner - A tool that enables users to communicate solely with their eyes, leveraging AI-powered sentence generation with llama3.2-vision:90b for intuitive, context-aware autocompletion.",
-      image: "/placeholder.svg",
+      description: "Meta Llama hackathon winner - eye tracking communication tool with AI-powered sentence generation.",
       technologies: ["Vite", "Webgazer.js", "Llama 3.2"],
       github: "https://github.com",
       demo: "https://cerebralvalley.pixieset.com/torontohackathon/demovideoswinners/",
@@ -85,8 +84,7 @@ const Portfolio = () => {
     {
       id: 2,
       title: "InterviewAId",
-      description: "CalHacks 2024 - Built an AI-powered platform for simulating voice-to-voice technical interviews with real-time feedback using FastAPI and Socket.IO. Managed data storage in AWS S3 with OpenAI Whisper for audio transcription.",
-      image: "/placeholder.svg",
+      description: "CalHacks 2024 - AI-powered voice interview platform with real-time feedback.",
       technologies: ["Next.js", "FastAPI", "Socket.IO", "Docker", "hume.AI", "LMNT"],
       github: "https://github.com/jaeeungracelee/InterviewAId",
       demo: "https://github.com/jaeeungracelee/InterviewAId",
@@ -94,9 +92,8 @@ const Portfolio = () => {
     },
     {
       id: 3,
-      title: "Inter-University Big Data Challenge 2024",
-      description: "Developed a random forest classifier using NLTK and Kaggle Datasets to scan & analyze text for sentiment ratings based on social media usage patterns. Used BeautifulSoup4 to web scrape and Reddit API and Twitter API to gather data.",
-      image: "/placeholder.svg",
+      title: "Sentiment Scanner",
+      description: "Inter-University Big Data Challenge 2024 - random forest classifier for sentiment analysis.",
       technologies: ["Python", "NLTK", "BeautifulSoup4", "Reddit API", "Twitter API"],
       github: "https://github.com",
       demo: "https://sentiment-scanner.vercel.app/",
@@ -105,8 +102,7 @@ const Portfolio = () => {
     {
       id: 4,
       title: "SmileQuest",
-      description: "StormHacks 2024 - Built a social media app promoting mental wellness using Node, Express, and Firebase DB. Developed Smiley, an interactive virtual friend with the ChatGPT API, engineered to stimulate supportive conversations.",
-      image: "/placeholder.svg",
+      description: "StormHacks 2024 - mental wellness social media app with AI chatbot",
       technologies: ["React Native", "TypeScript", "Node", "Express", "Firebase", "ChatGPT API"],
       github: "https://github.com/jaeeungracelee/SmileQuest",
       demo: "https://github.com/jaeeungracelee/SmileQuest",
@@ -115,13 +111,12 @@ const Portfolio = () => {
     {
       id: 5,
       title: "NaverScraper",
-      description: "A Next.js web application that scrapes Naver blogs and news articles based on keywords and date ranges, providing AI-powered sentiment analysis & data export capabilities for market trend research.",
-      image: "/placeholder.svg",
+      description: "web scraper for naver blogs and news with AI-powered sentiment analysis and data export.",
       technologies: ["Next.js", "Web Scraping", "AI", "Sentiment Analysis", "Data Export"],
       github: "https://github.com/jaeeungracelee/NaverScraper",
       demo: "https://github.com/jaeeungracelee/NaverScraper",
       category: "fullstack"
-    }
+    },
   ];
 
   const timelineItems = [
@@ -131,7 +126,7 @@ const Portfolio = () => {
       company: 'Amazon Web Services (AWS)',
       location: 'Toronto, ON',
       period: 'May 2025 - Present',
-      description: 'Contributing to the open-source AWS labs MCP repository by designing and developing a production-ready server to enable LLM-powered control plane operations across all Amazon RDS database engines.',
+      description: 'developing production-ready servers for LLM-powered control plane operations across amazon RDS database engines.',
       technologies: ['Python', 'AWS', 'RDS', 'LLM', 'Open Source'],
       logo: 'https://www.google.com/s2/favicons?sz=64&domain=aws.amazon.com'
     },
@@ -141,7 +136,7 @@ const Portfolio = () => {
       company: 'GSK (Formerly GlaxoSmithKline)',
       location: 'Seoul, Korea',
       period: 'Jan 2025 - Apr 2025',
-      description: 'Leveraged Databricks to map 78,000+ hospitals to 25,000+ pharmacies, enabling precise sales data tracking. Built a social listening platform on PowerBI using Naver API and pytrends to benchmark competing vaccines and support pre-launch activities for Arexvy.',
+      description: 'mapped 78k+ hospitals to 25k+ pharmacies using databricks and built social listening platforms for vaccine benchmarking.',
       technologies: ['Databricks', 'PowerBI', 'Python', 'Naver API', 'pytrends'],
       logo: 'https://www.google.com/s2/favicons?sz=64&domain=gsk.com'
     },
@@ -151,7 +146,7 @@ const Portfolio = () => {
       company: 'WAT.ai x Hamming.ai (YC S24)',
       location: 'Waterloo, ON',
       period: 'Sept 2024 - Present',
-      description: 'Developed LLM-based self-correction systems and established benchmarks to evaluate their efficiency in detecting and resolving bugs in extensive codebases. Achieved No.1 (MapCoder) and No.11 (Monte Carlo Tree Search) on the MBPP Leaderboard.',
+      description: 'achieved no.1 on MBPP leaderboard with LLM-based self-correction systems for bug detection and resolution.',
       technologies: ['Python', 'LLM', 'Machine Learning', 'Monte Carlo Tree Search', 'MBPP'],
       logo: 'https://www.google.com/s2/favicons?sz=64&domain=hamming.ai'
     },
@@ -161,7 +156,7 @@ const Portfolio = () => {
       company: 'Aquilini Investment Group',
       location: 'Vancouver, BC',
       period: 'May 2024 - Aug 2024',
-      description: 'Spearheaded a project consolidating 6000+ accounts using SQL, pandas, and Microsoft\'s SQL Server Reporting Services. Developed a trained AI model utilizing OCR and regex to automate invoice processing, reducing 400+ manual PDF data entries per day with 96%+ accuracy.',
+      description: 'built AI model for invoice processing automation reducing 400+ manual entries daily with 96%+ accuracy.',
       technologies: ['SQL', 'Python', 'pandas', 'PowerApps', 'OCR', 'AI/ML'],
       logo: 'https://www.google.com/s2/favicons?sz=64&domain=aquilini.com'
     },
@@ -171,7 +166,7 @@ const Portfolio = () => {
       company: 'University of Waterloo & Wilfrid Laurier University',
       location: 'Waterloo, ON',
       period: '2021 - Present',
-      description: 'Double Degree program combining Computer Science and Business Administration. Active in Computer Science Club as Web Designer, 3x Hackathon Winner, Math Faculty Orientation Team Head & MC. Coursework includes Object-Oriented Programming, Algorithm Design, and Software Development.',
+      description: 'double degree student, cs club web designer, 3x hackathon winner, and math faculty orientation team head.',
       technologies: ['C++', 'Python', 'Java', 'Web Development', 'Algorithms', 'Data Structures'],
       logo: 'https://www.google.com/s2/favicons?sz=64&domain=uwaterloo.ca'
     }
@@ -262,7 +257,7 @@ const Portfolio = () => {
                   creative ideas to life through code.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  {['React', 'TypeScript', 'Node.js', 'Three.js', 'Python', 'PostgreSQL'].map((skill) => (
+                  {['React', 'TypeScript', 'Node.js', 'Python', 'C/C++'].map((skill) => (
                     <span 
                       key={skill}
                       className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full text-sm font-medium border border-purple-500/30"
@@ -313,7 +308,7 @@ const Portfolio = () => {
               my projects
             </h2>
             <div className="flex justify-center gap-4 mb-12 flex-wrap">
-              {['all', 'ai', 'fullstack', 'data', 'mobile', 'creative'].map((category) => (
+              {['all', 'AI', 'fullstack', 'data', 'mobile'].map((category) => (
                 <Button
                   key={category}
                   variant={filter === category ? "default" : "outline"}
@@ -339,14 +334,14 @@ const Portfolio = () => {
                 viewport={{ once: true }}
               >
                 <Card className="group hover:shadow-2xl transition-all duration-500 border-purple-500/20 hover:border-cyan-500/50 overflow-hidden">
-                  <div className="relative overflow-hidden">
+                  {/* <div className="relative overflow-hidden">
                     <img 
                       src={project.image} 
                       alt={project.title}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
+                  </div> */}
                   <CardHeader>
                     <CardTitle className="flex items-center justify-between">
                       {project.title}

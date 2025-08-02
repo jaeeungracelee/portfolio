@@ -96,7 +96,7 @@ const BlogPost = () => {
               className="text-muted-foreground hover:text-foreground"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              back to blog
+b              back to blog
             </Button>
           </motion.div>
 
