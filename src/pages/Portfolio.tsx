@@ -79,7 +79,7 @@ const Portfolio = () => {
       technologies: ["Vite", "Webgazer.js", "Llama 3.2"],
       github: "https://github.com",
       demo: "https://cerebralvalley.pixieset.com/torontohackathon/demovideoswinners/",
-      category: "ai"
+      category: "fullstack"
     },
     {
       id: 2,
@@ -308,7 +308,7 @@ const Portfolio = () => {
               my projects
             </h2>
             <div className="flex justify-center gap-4 mb-12 flex-wrap">
-              {['all', 'AI', 'fullstack', 'data', 'mobile'].map((category) => (
+              {['all', 'fullstack', 'data', 'mobile'].map((category) => (
                 <Button
                   key={category}
                   variant={filter === category ? "default" : "outline"}
