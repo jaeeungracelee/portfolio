@@ -96,7 +96,7 @@ const BlogPost = () => {
               className="text-muted-foreground hover:text-foreground"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Blog
+              back to blog
             </Button>
           </motion.div>
 
@@ -107,7 +107,7 @@ const BlogPost = () => {
             transition={{ duration: 0.8 }}
           >
             <header className="mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent pb-1">
                 {post.title}
               </h1>
               
@@ -137,11 +137,11 @@ const BlogPost = () => {
               )}
 
               {post.image_url && (
-                <div className="mb-12">
+                <div className="mb-12 flex justify-center">
                   <img
                     src={post.image_url}
                     alt={post.title}
-                    className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
+                    className="w-full h-64 md:h-96 object-contain rounded-lg shadow-lg"
                   />
                 </div>
               )}
@@ -209,7 +209,7 @@ const BlogPost = () => {
                 className="hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-cyan-500/20"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to All Posts
+                back to all posts
               </Button>
             </Link>
           </motion.div>

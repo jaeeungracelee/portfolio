@@ -62,7 +62,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({ activeSection, scrollProgress
               >
                 <div className="relative flex items-center gap-2">
                   <Home className="w-4 h-4" />
-                  {!isMobile && <span className="text-sm font-medium">Home</span>}
+                  {!isMobile && <span className="text-sm font-medium">home</span>}
                 </div>
               </motion.div>
             </Link>
