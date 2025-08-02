@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import FloatingNav from '@/components/FloatingNav';
 import ThemeToggle from '@/components/ThemeToggle';
 import Timeline from '@/components/Timeline';
+import TypingAnimation from '@/components/TypingAnimation';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -116,7 +117,7 @@ const Portfolio = () => {
       github: "https://github.com/jaeeungracelee/NaverScraper",
       demo: "https://github.com/jaeeungracelee/NaverScraper",
       category: "fullstack"
-    },
+    }
   ];
 
   const timelineItems = [
@@ -186,35 +187,47 @@ const Portfolio = () => {
       <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-cyan-500/10 to-blue-500/10" />
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="text-center z-10 px-4"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center z-10 px-4 w-full max-w-4xl mx-auto"
         >
           <motion.h1 
-            className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent pb-2"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.2 }}
-          >
-            grace lee
-          </motion.h1>
-          <motion.p 
-            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent pb-2"
+            style={{ minHeight: '1.2em' }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            full stack developer & creative designer
+            <TypingAnimation
+              strings={[
+                "grace lee",
+                "full stack developer",
+                "이재은",
+                "李在恩"
+              ]}
+              typeSpeed={80}
+              backSpeed={50}
+              backDelay={2000}
+              className="inline-block"
+            />
+          </motion.h1>
+          <motion.p 
+            className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            building innovative solutions with modern technologies
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
           >
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white px-8 py-3 rounded-full"
+              className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg"
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
               see my work
@@ -232,48 +245,47 @@ const Portfolio = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4">
+      <section id="about" className="py-16 sm:py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
               about me
             </h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-              <div className="text-left">
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 sm:mb-20">
+              <div className="text-center lg:text-left order-2 lg:order-1">
+                <p className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed">
                   i'm a passionate full-stack developer with an eye for design and user experience. 
                   with over 3 years of experience, i specialize in creating modern, responsive web applications 
                   that not only look great but perform exceptionally well.
                 </p>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed">
                   my expertise spans across frontend technologies like react, next.js, and typescript, 
                   as well as backend development with node.js and various databases. i love bringing 
                   creative ideas to life through code.
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start">
                   {['React', 'TypeScript', 'Node.js', 'Python', 'C/C++'].map((skill) => (
                     <span 
                       key={skill}
-                      className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full text-sm font-medium border border-purple-500/30"
+                      className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full text-xs sm:text-sm font-medium border border-purple-500/30"
                     >
                       {skill}
                     </span>
                   ))}
                 </div>
               </div>
-              <div className="relative">
-                <div className="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-purple-400 via-cyan-400 to-blue-400 p-1">
+              <div className="order-1 lg:order-2 flex justify-center">
+                <div className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-purple-400 via-cyan-400 to-blue-400 p-1">
                   <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
                     <img 
                       src="/favicon.ico" 
                       alt="Grace Lee" 
-                      className="w-52 h-52 object-contain"
+                      className="w-40 h-40 sm:w-44 sm:h-44 lg:w-48 lg:h-48 object-contain"
                     />
                   </div>
                 </div>
@@ -307,16 +319,17 @@ const Portfolio = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent pb-1">
               my projects
             </h2>
-            <div className="flex justify-center gap-4 mb-12 flex-wrap">
+            <div className="flex justify-center gap-2 sm:gap-3 mb-12 flex-wrap">
               {['all', 'fullstack', 'data', 'mobile'].map((category) => (
                 <Button
                   key={category}
                   variant={filter === category ? "default" : "outline"}
                   onClick={() => setFilter(category)}
                   className={filter === category ? 
-                    "bg-gradient-to-r from-purple-500 to-cyan-500 text-white" : 
-                    "hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-cyan-500/20"
+                    "bg-gradient-to-r from-purple-500 to-cyan-500 text-white text-sm sm:text-base" : 
+                    "hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-cyan-500/20 text-sm sm:text-base"
                   }
+                  size="sm"
                 >
                   {category.charAt(0) + category.slice(1)}
                 </Button>
