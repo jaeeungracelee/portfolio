@@ -15,6 +15,13 @@ const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [scrollProgress, setScrollProgress] = useState(0);
   const [lastScrollY, setLastScrollY] = useState(0);
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
   useEffect(() => {
     let ticking = false;
@@ -78,7 +85,7 @@ const Portfolio = () => {
       title: "EyeSpeak",
       description: "Meta Llama hackathon winner - eye tracking communication tool with AI-powered sentence generation.",
       technologies: ["Vite", "Webgazer.js", "Llama 3.2"],
-      github: "https://github.com",
+      github: "https://eyespeak.vercel.app/",
       demo: "https://cerebralvalley.pixieset.com/torontohackathon/demovideoswinners/",
       category: "fullstack"
     },
@@ -88,7 +95,7 @@ const Portfolio = () => {
       description: "CalHacks 2024 - AI-powered voice interview platform with real-time feedback.",
       technologies: ["Next.js", "FastAPI", "Socket.IO", "Docker", "hume.AI", "LMNT"],
       github: "https://github.com/jaeeungracelee/InterviewAId",
-      demo: "https://github.com/jaeeungracelee/InterviewAId",
+      demo: "https://sentiment-scanner.vercel.app/",
       category: "fullstack"
     },
     {
@@ -96,7 +103,7 @@ const Portfolio = () => {
       title: "Sentiment Scanner",
       description: "Inter-University Big Data Challenge 2024 - random forest classifier for sentiment analysis.",
       technologies: ["Python", "NLTK", "BeautifulSoup4", "Reddit API", "Twitter API"],
-      github: "https://github.com",
+      github: "https://github.com/jaeeungracelee/SentimentScanner",
       demo: "https://sentiment-scanner.vercel.app/",
       category: "data"
     },
@@ -106,7 +113,7 @@ const Portfolio = () => {
       description: "StormHacks 2024 - mental wellness social media app with AI chatbot",
       technologies: ["React Native", "TypeScript", "Node", "Express", "Firebase", "ChatGPT API"],
       github: "https://github.com/jaeeungracelee/SmileQuest",
-      demo: "https://github.com/jaeeungracelee/SmileQuest",
+      demo: "https://devpost.com/software/smilequest",
       category: "mobile"
     },
     {
@@ -115,7 +122,7 @@ const Portfolio = () => {
       description: "web scraper for naver blogs and news with AI-powered sentiment analysis and data export.",
       technologies: ["Next.js", "Web Scraping", "AI", "Sentiment Analysis", "Data Export"],
       github: "https://github.com/jaeeungracelee/NaverScraper",
-      demo: "https://github.com/jaeeungracelee/NaverScraper",
+      demo: "https://naverscraper.vercel.app/",
       category: "fullstack"
     }
   ];
@@ -177,6 +184,31 @@ const Portfolio = () => {
   const filteredProjects = filter === 'all' 
     ? projects 
     : projects.filter(project => project.category === filter);
+
+  // Handle form submission
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Create mailto link
+    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+    const mailtoLink = `mailto:jaeeungracelee@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Reset form
+    setFormData({ name: '', email: '', message: '' });
+  };
+
+  // Handle form input changes
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -359,10 +391,22 @@ const Portfolio = () => {
                     <CardTitle className="flex items-center justify-between">
                       {project.title}
                       <div className="flex gap-2">
-                        <Button size="sm" variant="ghost" className="p-2">
+                        <Button 
+                          size="sm" 
+                          variant="ghost" 
+                          className="p-2"
+                          onClick={() => window.open(project.github, '_blank')}
+                          aria-label="View GitHub repository"
+                        >
                           <Github className="w-4 h-4" />
                         </Button>
-                        <Button size="sm" variant="ghost" className="p-2">
+                        <Button 
+                          size="sm" 
+                          variant="ghost" 
+                          className="p-2"
+                          onClick={() => window.open(project.demo, '_blank')}
+                          aria-label="View live demo"
+                        >
                           <ExternalLink className="w-4 h-4" />
                         </Button>
                       </div>
@@ -442,14 +486,27 @@ const Portfolio = () => {
               viewport={{ once: true }}
             >
               <Card className="p-8 border-purple-500/20">
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div>
                     <Label htmlFor="name">name</Label>
-                    <Input id="name" className="mt-2" />
+                    <Input 
+                      id="name" 
+                      className="mt-2" 
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                    />
                   </div>
                   <div>
                     <Label htmlFor="email">email</Label>
-                    <Input id="email" type="email" className="mt-2" />
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      className="mt-2" 
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                    />
                   </div>
                   <div>
                     <Label htmlFor="message">message</Label>
@@ -457,6 +514,9 @@ const Portfolio = () => {
                       id="message"
                       rows={4}
                       className="w-full mt-2 px-3 py-2 border border-input bg-background rounded-md resize-none"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
                     />
                   </div>
                   <Button 
