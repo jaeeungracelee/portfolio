@@ -95,7 +95,7 @@ const Portfolio = () => {
       description: "CalHacks 2024 - AI-powered voice interview platform with real-time feedback.",
       technologies: ["Next.js", "FastAPI", "Socket.IO", "Docker", "hume.AI", "LMNT"],
       github: "https://github.com/jaeeungracelee/InterviewAId",
-      demo: "https://sentiment-scanner.vercel.app/",
+      demo: "https://interview-aid.vercel.app/",
       category: "fullstack"
     },
     {
