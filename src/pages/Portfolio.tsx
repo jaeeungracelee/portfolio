@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Github, ExternalLink, Mail, Phone, MapPin } from 'lucide-react';
+import { ChevronDown, Github, ExternalLink, Mail, Phone, MapPin, Loader2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,6 +10,7 @@ import FloatingNav from '@/components/FloatingNav';
 import ThemeToggle from '@/components/ThemeToggle';
 import Timeline from '@/components/Timeline';
 import TypingAnimation from '@/components/TypingAnimation';
+import emailjs from '@emailjs/browser';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -22,6 +23,8 @@ const Portfolio = () => {
     email: '',
     message: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
 
   useEffect(() => {
     let ticking = false;
@@ -186,19 +189,34 @@ const Portfolio = () => {
     : projects.filter(project => project.category === filter);
 
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
+    setSubmitMessage('');
     
-    // Create mailto link
-    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
-    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
-    const mailtoLink = `mailto:jaeeungracelee@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    try {
+      const serviceId = 'service_64rqaip';
+      const templateId = 'template_f8a9xks';
+      const publicKey = 'ZriLdXC3G5VAIGO4H';
+      
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: 'jaeeungracelee@gmail.com'
+      };
+      
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      setSubmitMessage('message sent successfully! thank you for reaching out.');
+      setFormData({ name: '', email: '', message: '' });
+      
+    } catch (error) {
+      console.error('failed to send email:', error);
+      setSubmitMessage('failed to send message. please try again or contact me directly at jaeeungracelee@gmail.com');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   // Handle form input changes
@@ -521,10 +539,27 @@ const Portfolio = () => {
                   </div>
                   <Button 
                     type="submit" 
-                    className="w-full bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white"
+                    disabled={isLoading}
+                    className="w-full bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white disabled:opacity-50"
                   >
-                    send message
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        sending...
+                      </>
+                    ) : (
+                      'send message'
+                    )}
                   </Button>
+                  {submitMessage && (
+                    <div className={`mt-4 p-3 rounded-md text-sm ${
+                      submitMessage.includes('successfully') 
+                        ? 'bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400' 
+                        : 'bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400'
+                    }`}>
+                      {submitMessage}
+                    </div>
+                  )}
                 </form>
               </Card>
             </motion.div>
