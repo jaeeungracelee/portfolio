@@ -54,18 +54,20 @@ const FloatingNav: React.FC<FloatingNavProps> = ({ activeSection, scrollProgress
         <div className={`flex items-center ${isMobile ? 'gap-1 px-3 py-2' : 'gap-2 px-6 py-3'} bg-background/80 backdrop-blur-md border border-purple-500/20 rounded-full shadow-lg`}>
           {/* Home link for non-home pages */}
           {location.pathname !== '/' && (
-            <Link to="/">
-              <motion.div
-                className={`relative ${isMobile ? 'px-2 py-1.5' : 'px-4 py-2'} rounded-full transition-all duration-300 text-muted-foreground hover:text-foreground`}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link 
+                to="/"
+                className={`relative ${isMobile ? 'px-2 py-1.5' : 'px-4 py-2'} rounded-full transition-all duration-300 text-muted-foreground hover:text-foreground block`}
               >
                 <div className="relative flex items-center gap-2">
                   <Home className="w-4 h-4" />
                   {!isMobile && <span className="text-sm font-medium">home</span>}
                 </div>
-              </motion.div>
-            </Link>
+              </Link>
+            </motion.div>
           )}
 
           {/* Main sections (only show on home page) */}
@@ -110,26 +112,28 @@ const FloatingNav: React.FC<FloatingNavProps> = ({ activeSection, scrollProgress
             const Icon = item.icon;
             const isActive = location.pathname === item.href;
             
+            const MotionLink = motion(Link);
+            
             return (
-              <Link key={item.href} to={item.href}>
-                <motion.div
-                  className={`relative ${isMobile ? 'px-2 py-1.5' : 'px-4 py-2'} rounded-full transition-all duration-300 ${
-                    isActive 
-                      ? 'text-white' 
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {isActive && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full" />
-                  )}
-                  <div className="relative flex items-center gap-2">
-                    <Icon className="w-4 h-4" />
-                    {!isMobile && <span className="text-sm font-medium">{item.label}</span>}
-                  </div>
-                </motion.div>
-              </Link>
+              <MotionLink
+                key={item.href}
+                to={item.href}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className={`relative ${isMobile ? 'px-2 py-1.5' : 'px-4 py-2'} rounded-full transition-all duration-300 ${
+                  isActive 
+                    ? 'text-white' 
+                    : 'text-muted-foreground hover:text-foreground'
+                } block`}
+              >
+                {isActive && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full" />
+                )}
+                <div className="relative flex items-center gap-2">
+                  <Icon className="w-4 h-4" />
+                  {!isMobile && <span className="text-sm font-medium">{item.label}</span>}
+                </div>
+              </MotionLink>
             );
           })}
         </div>
