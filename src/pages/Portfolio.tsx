@@ -333,7 +333,7 @@ const Portfolio = () => {
                 <div className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-purple-400 via-cyan-400 to-blue-400 p-1">
                   <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
                     <img 
-                      src="/favicon.ico" 
+                      src="/icon.png" 
                       alt="Grace Lee" 
                       className="w-40 h-40 sm:w-44 sm:h-44 lg:w-48 lg:h-48 object-contain"
                     />
