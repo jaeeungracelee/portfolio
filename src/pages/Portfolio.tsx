@@ -127,6 +127,15 @@ const Portfolio = () => {
       github: "https://github.com/jaeeungracelee/NaverScraper",
       demo: "https://naverscraper.vercel.app/",
       category: "fullstack"
+    },
+    {
+      id: 6,
+      title: "AIgent",
+      description: "automates startups by enabling users to create customizable AI agents with distinct roles.",
+      technologies: ["Next.js", "AI", "Python"],
+      github: "https://github.com/jaeeungracelee/aigent-landing-page",
+      demo: "https://aigent-landing-page.vercel.app/",
+      category: "fullstack"
     }
   ];
 
